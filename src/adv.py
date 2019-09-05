@@ -1,5 +1,5 @@
 from room import Room
-
+from player import Player
 # Declare all the rooms
 
 room = {
@@ -23,7 +23,6 @@ earlier adventurers. The only exit is to the south."""),
 
 
 # Link rooms together
-print(room)
 room['outside'].n_to = room['foyer']
 room['foyer'].s_to = room['outside']
 room['foyer'].n_to = room['overlook']
@@ -38,7 +37,7 @@ room['treasure'].s_to = room['narrow']
 #
 
 # Make a new player object that is currently in the 'outside' room.
-
+player = Player("Enoka", room["outside"])
 # Write a loop that:
 #
 # * Prints the current room name
@@ -49,3 +48,11 @@ room['treasure'].s_to = room['narrow']
 # Print an error message if the movement isn't allowed.
 #
 # If the user enters "q", quit the game.
+
+print(player.get_current_room())
+
+while True:
+    print(player.current_room)
+    prompt = input("which direction would you like to move towards? \n (n)orth \n (s)outh \n (e)ast \n (w)est \n (q)uit:   ")
+    
+
