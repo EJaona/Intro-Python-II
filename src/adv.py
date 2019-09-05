@@ -50,12 +50,14 @@ player = Player("Enoka", room['outside'])
 # If the user enters "q", quit the game.
 
 # print(repr(player.current_room))
+quit = False
 
-while True:
+while not quit:
     print(player.current_room.name)
+    print(player.current_room.description)
     prompt = input("which direction would you like to move towards? \n (n)orth \n (s)outh \n (e)ast \n (w)est \n (q)uit:\n   ")
     if prompt == 'q':
         print("Thank you for playing adventure game, bye bye")
-        break
+        quit = True
     
 
