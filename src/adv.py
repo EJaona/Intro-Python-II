@@ -37,7 +37,7 @@ room['treasure'].s_to = room['narrow']
 #
 
 # Make a new player object that is currently in the 'outside' room.
-player = Player("Enoka", room["outside"])
+player = Player("Enoka", room['outside'])
 # Write a loop that:
 #
 # * Prints the current room name
@@ -49,10 +49,13 @@ player = Player("Enoka", room["outside"])
 #
 # If the user enters "q", quit the game.
 
-print(player.get_current_room())
+# print(repr(player.current_room))
 
 while True:
-    print(player.current_room)
-    prompt = input("which direction would you like to move towards? \n (n)orth \n (s)outh \n (e)ast \n (w)est \n (q)uit:   ")
+    print(player.current_room.name)
+    prompt = input("which direction would you like to move towards? \n (n)orth \n (s)outh \n (e)ast \n (w)est \n (q)uit:\n   ")
+    if prompt == 'q':
+        print("Thank you for playing adventure game, bye bye")
+        break
     
 

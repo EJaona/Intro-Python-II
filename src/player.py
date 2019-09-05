@@ -5,6 +5,9 @@ class Player:
         self.name = name
         self.current_room = current_room
 
+    def __repr__(self):
+        return f"Player({repr(self.name, self.current_room)})"
+
     def get_current_room(self):
         return self.current_room
     

@@ -5,5 +5,5 @@ class Room:
         self.name = name
         self.description = description
 
-    def __repr__(self):
-        return f"Room({repr(self.name, self.description)})"
+    # def __repr__(self):
+    #     return f"Room({repr(self.name, self.description)})"
