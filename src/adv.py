@@ -53,11 +53,21 @@ player = Player("Enoka", room['outside'])
 quit = False
 
 while not quit:
-    print(player.current_room.name)
+
+    print(f"You are here: {player.current_room.name}")
     print(player.current_room.description)
+
     prompt = input("which direction would you like to move towards? \n (n)orth \n (s)outh \n (e)ast \n (w)est \n (q)uit:\n   ")
     if prompt == 'q':
         print("Thank you for playing adventure game, bye bye")
         quit = True
+    if prompt == 'n':
+        player.current_room = player.current_room.n_to
+    if prompt == 's':
+        player.current_room = player.current_room.s_to
+    if prompt == 'e':
+        player.current_room = player.current_room.e_to
+    if prompt == 'w':
+        player.current_room = player.current_room.w_to
     
 
